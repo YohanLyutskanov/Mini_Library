@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<div style="background-image:url('{{ asset('images/tR6mod.jpg') }}')">
+
+    {% block header %}
+        <div class="container" style="text-align:center;">
+            <br>
+            <a href="{{ path('show_books') }}" style="color: white">
+                <button type="submit" class="btn btn-primary">Home</button>
+            </a>
+
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('add_book_form') }}" style="color: white">
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                </a>
+            {% endif %}
+
+            <a href="{{ path('logout') }}" style="color: white">
+                <button type="submit" class="btn btn-primary">Log Out</button>
+            </a>
+            <br>
+        </div>
+        <br>
+    {% endblock %}
+
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous">
+    </head>
+    <body>
+    {% block body %}
+    {% endblock %}
+    {% block javascripts %}{% endblock %}
+    </body>
+</div>
+
+</html>

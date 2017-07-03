@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set pages = pagination %}
+    {% for msg in app.session.flashBag.get('info') %}
+        <div class="alert alert-success">
+            <h1>{{ msg }}</h1>
+        </div>
+    {% endfor %}
+    {% for msg in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger">
+            <h1>{{ msg }}</h1>
+        </div>
+    {% endfor %}
+    <link rel="stylesheet" href="{{ asset('css/stylesheet1.css') }}">
+    <div class="container1">
+        <div class="container" style="background-color:rgba(255,255,255,0.8);">
+            <h5>Sort by:
+                {{ knp_pagination_sortable(pages, "Publish Date", "b.publishDate") }} /
+                {{ knp_pagination_sortable(pages, "Book Title", "b.title") }}
+                <br>
+            </h5>
+                <form method="post">
+                    <div class="table-responsive">
+                        <table class="table table-hover" border="1">
+                            <thead>
+                            <tr>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Pages</th>
+                                <th>Publish Date</th>
+                                <th>Details</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for book in pages %}
+
+                                <tr>
+                                    <td><img src="/images/bookCovers/{{ book.image }}" style="width: 50px;"></td>
+                                    <td>{{ book.title }}</td>
+                                    <td>{{ book.author }}</td>
+                                    <td>{{ book.pageCount }}</td>
+                                    <td>{{ book.publishDate|date('Y-m-d') }}</td>
+                                    <td><a href="{{ path('view_single_book', { 'id': book.id }) }}">Show Book
+                                            Details</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <td colspan="7">
+                            <div class="navigation" style="text-align:center;">
+                                {{ knp_pagination_render(pages) }}
+                            </div>
+                        </td>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

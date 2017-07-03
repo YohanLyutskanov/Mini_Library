@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/stylesheet1.css') }}">
+    <div class="container1">
+        <div class="container" style="text-align:center;">
+            <div class="col-md-4 col-md-offset-4" style="background-color:rgba(000,0,0,0.5);">
+                <div style="color:white;">
+                    {{ form_start(bookForm) }}
+                    {{ form_widget(bookForm) }}
+                    <button type="submit" class="btn btn-primary" formnovalidate>Add Book</button>
+                    {{ form_end(bookForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
