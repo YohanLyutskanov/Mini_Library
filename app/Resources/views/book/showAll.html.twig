@@ -20,42 +20,42 @@
                 {{ knp_pagination_sortable(pages, "Book Title", "b.title") }}
                 <br>
             </h5>
-                <form method="post">
-                    <div class="table-responsive">
-                        <table class="table table-hover" border="1">
-                            <thead>
-                            <tr>
-                                <th>Cover</th>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Pages</th>
-                                <th>Publish Date</th>
-                                <th>Details</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for book in pages %}
+            <form method="post">
+                <div class="table-responsive">
+                    <table class="table table-hover" border="1">
+                        <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Pages</th>
+                            <th>Publish Date</th>
+                            <th>Details</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for book in pages %}
 
-                                <tr>
-                                    <td><img src="/images/bookCovers/{{ book.image }}" style="width: 50px;"></td>
-                                    <td>{{ book.title }}</td>
-                                    <td>{{ book.author }}</td>
-                                    <td>{{ book.pageCount }}</td>
-                                    <td>{{ book.publishDate|date('Y-m-d') }}</td>
-                                    <td><a href="{{ path('view_single_book', { 'id': book.id }) }}">Show Book
-                                            Details</a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                        <td colspan="7">
-                            <div class="navigation" style="text-align:center;">
-                                {{ knp_pagination_render(pages) }}
-                            </div>
-                        </td>
-                    </div>
-                </form>
-            </div>
+                            <tr>
+                                <td><img src="/images/bookCovers/{{ book.image }}" style="width: 50px;"></td>
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.author }}</td>
+                                <td>{{ book.pageCount }}</td>
+                                <td>{{ book.publishDate|date('Y-m-d') }}</td>
+                                <td><a href="{{ path('view_single_book', { 'id': book.id }) }}">Show Book
+                                        Details</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <td colspan="7">
+                        <div class="navigation" style="text-align:center;">
+                            {{ knp_pagination_render(pages) }}
+                        </div>
+                    </td>
+                </div>
+            </form>
         </div>
+    </div>
 {% endblock %}
