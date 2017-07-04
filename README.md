@@ -1,4 +1,4 @@
-.checkout
-=========
-
-A Symfony project created on June 20, 2017, 10:18 am.
+This is a simple library where evrybody can register and look for books. 
+If you want to log in as an admin use the following username and password:
+USERNAME: Admin
+PASSWORD: admin
