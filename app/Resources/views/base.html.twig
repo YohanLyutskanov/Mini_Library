@@ -8,7 +8,6 @@
                 <button type="submit" class="btn btn-primary">Home</button>
             </a>
 
-
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('add_book_form') }}" style="color: white">
                     <button type="submit" class="btn btn-primary">Add Book</button>
