@@ -14,7 +14,7 @@
     {% endfor %}
     <link rel="stylesheet" href="{{ asset('css/stylesheet1.css') }}">
     <div class="container1">
-        <div class="container" style="background-color:rgba(255,255,255,0.8);">
+        <div class="container" style="background-color:rgba(255,255,255,0.8);" id="rcorners">
             <h5>Sort by:
                 {{ knp_pagination_sortable(pages, "Publish Date", "b.publishDate") }} /
                 {{ knp_pagination_sortable(pages, "Book Title", "b.title") }}

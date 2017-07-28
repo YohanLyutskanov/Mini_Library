@@ -13,12 +13,27 @@
     margin-right: auto;
     margin-left: auto;
 }
-.cloud-container{
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    overflow:hidden;
-    z-index:-1; /* Remove this line if it's not going to be a background! */
+
+.cloud-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1; /* Remove this line if it's not going to be a background! */
+}
+
+.backgroundImage {
+    background-image: url(../images/tR6mod.jpg);
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+}
+
+#rcorners {
+    border-radius: 25px;
 }
